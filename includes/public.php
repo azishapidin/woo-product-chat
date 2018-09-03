@@ -11,6 +11,7 @@ foreach ($data as $key => $value) {
 	$content = str_replace('{{' . $key . '}}', $value, $content);
 }
 ?>
+
 <button id="chat-wa" type="button" onclick="openWA()"><?php echo $button ?></button>
 <script>
 function openWA(){
