@@ -1,0 +1,1 @@
+WooWhatsApp is the WordPress plugin for add WhatsApp Button in every Single Product Page, this button can be used for users to ask or order via WhatsApp. This plugin is work both on desktop and mobile (tablet, handphone, etc).
