@@ -6,7 +6,7 @@
  * Version: 0.9.1
  * Author: Azis Hapidin
  * Author URI: https://azishapidin.com/
- * License: MIT License
+ * License: GPLv2
  */
 
 // Define activator
