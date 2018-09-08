@@ -10,28 +10,28 @@
  */
 
 // Define activator
-function activatePlugin()
+function wooWhatsAppActicatePlugin()
 {
    require_once __DIR__ . '/includes/activator.php';
 }
-register_activation_hook( __FILE__, 'activatePlugin');
+register_activation_hook( __FILE__, 'wooWhatsAppActicatePlugin');
 
 // Add submenu setting to WooCommerce
-add_action('admin_menu', 'woo_whatsapp_admin');
-function woo_whatsapp_admin(){
-   add_submenu_page('woocommerce', 'Woo WhatsApp', 'WooWhatsApp', 'manage_options', 'woo_whatsapp_admin', 'wooWaSettingPage' );
+add_action('admin_menu', 'wooWhatsAppAdminMenu');
+function wooWhatsAppAdminMenu(){
+   add_submenu_page('woocommerce', 'Woo WhatsApp', 'WooWhatsApp', 'manage_options', 'woo_whatsapp_admin', 'wooWhatsAppAdminPage' );
 }
-function wooWaSettingPage()
+function wooWhatsAppAdminPage()
 {
    require_once __DIR__ . '/includes/admin-display.php';
 }
 
 // Add WA Button on Single Product
-function waButton()
+function wooWhatsAppButtonAfterCart()
 {
     require_once __DIR__ . '/includes/public.php';
 }
 if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
    
-   add_action('woocommerce_after_add_to_cart_button', 'waButton');
+   add_action('woocommerce_after_add_to_cart_button', 'wooWhatsAppButtonAfterCart');
 }
