@@ -6,6 +6,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $default = 'Hello, I want to buy this product {{link}}';
 if (count($_POST) > 0) {
+    if ( 
+        ! isset( $_POST['_token'] ) 
+        || ! wp_verify_nonce( $_POST['_token'], 'woo_wa_admin_update' ) 
+    ) {
+     
+       echo 'Sorry, your nonce did not verify.';
+       exit;
+     
+    }
     if (isset($_POST['woo_wa_phone_number'])) {
         if (!get_option('woo_wa_phone_number') || strlen(get_option('woo_wa_phone_number')) == 0) {
             add_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
@@ -41,6 +50,7 @@ if (count($_POST) > 0) {
     <?php } ?>
     <form action="" method="post">
         <?php settings_fields( 'woocommerce-order-whatsapp' ); do_settings_sections( 'woocommerce-order-whatsapp' ); ?>
+        <?php wp_nonce_field( 'woo_wa_admin_update', '_token' ); ?>
         <table class="form-table">
             <tr valign="top">
             <th scope="row">WhatsApp Phone Number</th>
