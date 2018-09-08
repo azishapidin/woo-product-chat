@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 $default = 'Hello, I want to buy this product {{link}}';
 if (count($_POST) > 0) {
     if (isset($_POST['woo_wa_phone_number'])) {

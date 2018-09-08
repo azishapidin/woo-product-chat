@@ -1,4 +1,9 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 /*
  * Plugin Name: WooWhatsApp
  * Plugin URI: https://github.com/azishapidin/woo-whatsapp

@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 if (!class_exists('WooCommerce')) {
 	die('To use this plugin, you must install WooCommerce.');
 }
