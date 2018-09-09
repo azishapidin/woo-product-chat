@@ -5,6 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $default = 'Hello, I want to buy this product {{link}}';
+$errorMessage = null;
 if (count($_POST) > 0) {
     if ( 
         ! isset( $_POST['_token'] ) 
@@ -15,28 +16,30 @@ if (count($_POST) > 0) {
        exit;
      
     }
-    if (isset($_POST['woo_wa_phone_number'])) {
+    if (isset($_POST['woo_wa_phone_number']) && is_null($errorMessage)) {
         if (!get_option('woo_wa_phone_number') || strlen(get_option('woo_wa_phone_number')) == 0) {
             add_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
         } else {
             update_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
         } 
     }
-    if (isset($_POST['woo_wa_content'])) {
+    if (isset($_POST['woo_wa_content']) && is_null($errorMessage)) {
         if (!get_option('woo_wa_content') || strlen(get_option('woo_wa_content')) == 0) {
             add_option( 'woo_wa_content', $_POST['woo_wa_content'] );
         } else {
             update_option( 'woo_wa_content', $_POST['woo_wa_content'] );
         }
     }
-    if (isset($_POST['woo_wa_button'])) {
+    if (isset($_POST['woo_wa_button']) && is_null($errorMessage)) {
         if (!get_option('woo_wa_button') || strlen(get_option('woo_wa_button')) == 0) {
             add_option( 'woo_wa_button', $_POST['woo_wa_button'] );
         } else {
             update_option( 'woo_wa_button', $_POST['woo_wa_button'] );
         }
     }
-    $success = true;
+    if (is_null($errorMessage)) {
+        $success = true;
+    }
 }
 ?>
 
@@ -48,6 +51,11 @@ if (count($_POST) > 0) {
         <p>Changes Saved :)</p>
     </div>
     <?php } ?>
+    <?php if(!is_null($errorMessage)){ ?>
+    <div class="notice notice-error is-dismissible">
+        <p><?php echo $errorMessage; ?></p>
+    </div>
+    <?php } ?>
     <form action="" method="post">
         <?php settings_fields( 'woocommerce-order-whatsapp' ); do_settings_sections( 'woocommerce-order-whatsapp' ); ?>
         <?php wp_nonce_field( 'woo_wa_admin_update', '_token' ); ?>
@@ -55,7 +63,7 @@ if (count($_POST) > 0) {
             <tr valign="top">
             <th scope="row">WhatsApp Phone Number</th>
             <td>
-                <input style="width: 300px;" type="numeric" name="woo_wa_phone_number" value="<?php echo esc_attr( get_option('woo_wa_phone_number') ); ?>" placeholder="Example: 62888XXXXXXX" />
+                <input style="width: 300px;" type="text" name="woo_wa_phone_number" value="<?php echo esc_attr( get_option('woo_wa_phone_number') ); ?>" placeholder="Example: 62888XXXXXXX" />
                 <br><small>Don't forget to add country code prefix, like 62 for Indonesia.</small>
             </td>
             </tr>
