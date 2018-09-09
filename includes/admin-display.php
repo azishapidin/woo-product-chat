@@ -17,11 +17,16 @@ if (count($_POST) > 0) {
      
     }
     if (isset($_POST['woo_wa_phone_number']) && is_null($errorMessage)) {
-        if (!get_option('woo_wa_phone_number') && !is_string(get_option('woo_wa_phone_number'))) {
-            add_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
+        if (!ctype_digit($_POST['woo_wa_phone_number'])) {
+            $errorMessage = 'WhatsApp Number must be numeric.'
         } else {
-            update_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
-        } 
+            if (!get_option('woo_wa_phone_number') && !is_string(get_option('woo_wa_phone_number'))) {
+                add_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
+            } else {
+                update_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
+            } 
+            $success = true;
+        }
     }
     if (isset($_POST['woo_wa_content']) && is_null($errorMessage)) {
         if (!get_option('woo_wa_content') && !is_string(get_option('woo_wa_content'))) {
@@ -29,6 +34,7 @@ if (count($_POST) > 0) {
         } else {
             update_option( 'woo_wa_content', $_POST['woo_wa_content'] );
         }
+        $success = true;
     }
     if (isset($_POST['woo_wa_button']) && is_null($errorMessage)) {
         if (!get_option('woo_wa_button') && !is_string(get_option('woo_wa_button'))) {
@@ -36,8 +42,6 @@ if (count($_POST) > 0) {
         } else {
             update_option( 'woo_wa_button', $_POST['woo_wa_button'] );
         }
-    }
-    if (is_null($errorMessage)) {
         $success = true;
     }
 }
