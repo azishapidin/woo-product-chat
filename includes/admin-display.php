@@ -18,7 +18,7 @@ if (count($_POST) > 0) {
     }
     if (isset($_POST['woo_wa_phone_number']) && is_null($errorMessage)) {
         if (!ctype_digit($_POST['woo_wa_phone_number'])) {
-            $errorMessage = 'WhatsApp Number must be numeric.'
+            $errorMessage = 'WhatsApp Number must be numeric.';
         } else {
             if (!get_option('woo_wa_phone_number') && !is_string(get_option('woo_wa_phone_number'))) {
                 add_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
