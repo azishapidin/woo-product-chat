@@ -54,7 +54,10 @@ if (count($_POST) > 0) {
         <table class="form-table">
             <tr valign="top">
             <th scope="row">WhatsApp Phone Number</th>
-            <td><input style="width: 300px;" type="text" name="woo_wa_phone_number" value="<?php echo esc_attr( get_option('woo_wa_phone_number') ); ?>" /></td>
+            <td>
+                <input style="width: 300px;" type="numeric" name="woo_wa_phone_number" value="<?php echo esc_attr( get_option('woo_wa_phone_number') ); ?>" placeholder="Example: 62888XXXXXXX" />
+                <br><small>Don't forget to add country code prefix, like 62 for Indonesia.</small>
+            </td>
             </tr>
 
             <tr valign="top">
