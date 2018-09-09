@@ -19,8 +19,8 @@ foreach ($data as $key => $value) {
 <button id="chat-wa" type="button" onclick="openWA()"><?php echo $button ?></button>
 <script>
 function openWA(){
-	var t = "<?php echo $phoneNumber ?>",
-    	a = "<?php echo $content ?>";
+	var t = "<?php echo esc_attr( $phoneNumber ); ?>",
+    	a = "<?php echo esc_attr( $content ) ?>";
 	if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) var e = "https://wa.me/" + t + "?text=" + a;
 	else e = "https://web.whatsapp.com/send?phone=" + t + "&text=" + a;
 	var n = window.open(e, "_blank");

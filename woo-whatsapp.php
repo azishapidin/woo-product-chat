@@ -14,12 +14,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * License: GPLv2
  */
 
-// Define activator
+// Start plugin activator.
 function wooWhatsAppActicatePlugin()
 {
    require_once __DIR__ . '/includes/activator.php';
 }
 register_activation_hook( __FILE__, 'wooWhatsAppActicatePlugin');
+// End plugin acticator
 
 // Add submenu setting to WooCommerce
 add_action('admin_menu', 'wooWhatsAppAdminMenu');
@@ -30,6 +31,7 @@ function wooWhatsAppAdminPage()
 {
    require_once __DIR__ . '/includes/admin-display.php';
 }
+// End submenu setting
 
 // Add WA Button on Single Product
 function wooWhatsAppButtonAfterCart()
