@@ -17,21 +17,21 @@ if (count($_POST) > 0) {
      
     }
     if (isset($_POST['woo_wa_phone_number']) && is_null($errorMessage)) {
-        if (!get_option('woo_wa_phone_number')) {
+        if (!get_option('woo_wa_phone_number') && !is_string(get_option('woo_wa_phone_number'))) {
             add_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
         } else {
             update_option( 'woo_wa_phone_number', $_POST['woo_wa_phone_number'] );
         } 
     }
     if (isset($_POST['woo_wa_content']) && is_null($errorMessage)) {
-        if (!get_option('woo_wa_content')) {
+        if (!get_option('woo_wa_content') && !is_string(get_option('woo_wa_content'))) {
             add_option( 'woo_wa_content', $_POST['woo_wa_content'] );
         } else {
             update_option( 'woo_wa_content', $_POST['woo_wa_content'] );
         }
     }
     if (isset($_POST['woo_wa_button']) && is_null($errorMessage)) {
-        if (!get_option('woo_wa_button')) {
+        if (!get_option('woo_wa_button') && !is_string(get_option('woo_wa_button'))) {
             add_option( 'woo_wa_button', $_POST['woo_wa_button'] );
         } else {
             update_option( 'woo_wa_button', $_POST['woo_wa_button'] );
