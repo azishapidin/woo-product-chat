@@ -15,7 +15,7 @@ $wooWhatsAppDefault = [
  * @param string $format Content Format.
  * @param \WC_Data\WC_Abstract_Legacy_Product\WC_Product $product WooCommerce Product
  */
-function getContent($format = '', $product)
+function wooWhatsAppGetContent($format = '', $product)
 {
     if ($format == '') {
         $format = $wooWhatsAppDefault['content'];
