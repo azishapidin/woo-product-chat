@@ -1,4 +1,4 @@
-=== WooWhatsApp ===
+=== Woocommerce Chat to WhatsApp ===
 Contributors: azishapidin
 Tags: woocommerce, whatsapp, order
 Requires at least: 3.0.1
