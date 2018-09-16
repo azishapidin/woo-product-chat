@@ -17,3 +17,11 @@ WooWhatsApp is the WordPress plugin for add WhatsApp Button in every Single Prod
 2. Install and activate this plugin.
 3. Go to /wp-admin, on WooCommerce menu, click WooWhatsApp.
 4. Your button is ready.
+
+== Changelog ==
+ 
+= 1.2.2 =
+* Add 'single_add_to_cart_button button' class to button.
+ 
+= 0.9.1 =
+* Release to WordPress Plugin Directory.
