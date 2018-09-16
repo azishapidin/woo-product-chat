@@ -12,7 +12,7 @@ $content = esc_attr( get_option('woo_wa_content') );
 $button = esc_attr( get_option('woo_wa_button') );
 ?>
 
-<button id="chat-wa" type="button" onclick="openWA()"><?php echo $button ?></button>
+<button class="single_add_to_cart_button button" id="chat-wa" type="button" onclick="openWA()"><?php echo $button ?></button>
 <script>
 function openWA(){
 	var t = "<?php echo esc_attr( $phoneNumber ); ?>",

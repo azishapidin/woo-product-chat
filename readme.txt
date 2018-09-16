@@ -3,12 +3,13 @@ Contributors: azishapidin
 Tags: woocommerce, whatsapp, order
 Requires at least: 3.0.1
 Tested up to: 5.0
-Requires PHP: 5.2.4
-Stable tag: 1.0.0
+Requires PHP: 5.0.0
+Stable tag: 1.2.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 WooWhatsApp is the WordPress plugin for add WhatsApp Button in every Single Product Page, this button can be used for users to ask or order via WhatsApp. This plugin is work both on desktop and mobile (tablet, handphone, etc).
+<a href="https://woo-wa.azishapidin.com/product/vneck-tee/" target="_blank">Click Here</a> to see Demo.
 
 == Installation ==
 
