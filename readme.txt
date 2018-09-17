@@ -1,6 +1,7 @@
 === Woocommerce Chat to WhatsApp ===
 Contributors: azishapidin
 Tags: woocommerce, whatsapp, order
+Donate link: https://www.paypal.me/azishapidin
 Requires at least: 3.0.1
 Tested up to: 5.0
 Requires PHP: 5.0.0
