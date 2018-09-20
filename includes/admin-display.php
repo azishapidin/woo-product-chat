@@ -5,6 +5,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+if( isset( $_GET[ 'tab' ] ) ) {
+    $active_tab = $_GET[ 'tab' ];
+} else {
+    $active_tab = 'general';
+}
+
 $errorMessage = null;
 if (count($_POST) > 0) {
     if ( 
@@ -49,7 +55,11 @@ if (count($_POST) > 0) {
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="wrap">
-    <h1>WooCommerce Order to WhatsApp Setting</h1>
+    <h1>WooCommerce Chat to WhatsApp Setting</h1>
+    <h2 class="nav-tab-wrapper">
+        <a href="?page=woo_whatsapp_admin&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">General</a>
+        <a href="?page=woo_whatsapp_admin&tab=advance" class="nav-tab <?php echo $active_tab == 'advance' ? 'nav-tab-active' : ''; ?>">Advance Settings</a>
+    </h2>
     <?php if(isset($success) && $success){ ?>
     <div class="notice notice-success is-dismissible">
         <p>Changes Saved :)</p>
@@ -61,6 +71,7 @@ if (count($_POST) > 0) {
     </div>
     <?php } ?>
     <form action="" method="post">
+        <?php if ($active_tab == 'general') { ?>
         <?php settings_fields( 'woocommerce-order-whatsapp' ); do_settings_sections( 'woocommerce-order-whatsapp' ); ?>
         <?php wp_nonce_field( 'woo_wa_admin_update', '_token' ); ?>
         <table class="form-table">
@@ -92,6 +103,9 @@ if (count($_POST) > 0) {
             
             </tr>
         </table>
+        <?php } elseif ($active_tab == 'advance') { ?>
+        <p>This tab for advance settings like CSS Style, button class, etc.</p>
+        <?php } ?>
         <?php submit_button(); ?>
     </form>
 </div>
