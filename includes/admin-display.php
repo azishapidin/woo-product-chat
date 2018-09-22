@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/main.php';
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -26,28 +26,16 @@ if (count($_POST) > 0) {
         if (!ctype_digit($_POST['woo_wa_phone_number'])) {
             $errorMessage = 'WhatsApp Number must be numeric.';
         } else {
-            if (!get_option('woo_wa_phone_number') && !is_string(get_option('woo_wa_phone_number'))) {
-                add_option( 'woo_wa_phone_number', sanitize_text_field($_POST['woo_wa_phone_number']) );
-            } else {
-                update_option( 'woo_wa_phone_number', sanitize_text_field($_POST['woo_wa_phone_number']) );
-            } 
+            $wooWhatsAppObject->setOption('woo_wa_phone_number', sanitize_text_field($_POST['woo_wa_phone_number']));
             $success = true;
         }
     }
     if (isset($_POST['woo_wa_content']) && is_null($errorMessage)) {
-        if (!get_option('woo_wa_content') && !is_string(get_option('woo_wa_content'))) {
-            add_option( 'woo_wa_content', sanitize_text_field($_POST['woo_wa_content']) );
-        } else {
-            update_option( 'woo_wa_content', sanitize_text_field($_POST['woo_wa_content']) );
-        }
+        $wooWhatsAppObject->setOption('woo_wa_content', sanitize_text_field($_POST['woo_wa_content']));
         $success = true;
     }
     if (isset($_POST['woo_wa_button']) && is_null($errorMessage)) {
-        if (!get_option('woo_wa_button') && !is_string(get_option('woo_wa_button'))) {
-            add_option( 'woo_wa_button', sanitize_text_field($_POST['woo_wa_button']) );
-        } else {
-            update_option( 'woo_wa_button', sanitize_text_field($_POST['woo_wa_button']) );
-        }
+        $wooWhatsAppObject->setOption('woo_wa_button', sanitize_text_field($_POST['woo_wa_button']));
         $success = true;
     }
 }
@@ -97,7 +85,7 @@ if (count($_POST) > 0) {
                     <li>You can use <strong>{{title}}</strong> to insert Product Name.</li>
                     <li>You can use <strong>{{link}}</strong> to insert Product URL.</li>
                 </ul>
-                Example: <em><?php echo esc_attr( $wooWhatsAppDefault['content'] ); ?></em> will be parsed to <strong>Hello, I want to buy this product https://example.com/store/product/cool-thsirt</strong>
+                Example: <em><?php echo esc_attr($wooWhatsAppObject->defaultContent); ?></em> will be parsed to <strong>Hello, I want to buy this product https://example.com/store/product/cool-thsirt</strong>
             </td>
             </tr>
             
