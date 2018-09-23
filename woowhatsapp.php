@@ -33,7 +33,12 @@ function wooWhatsAppAdminPage()
 }
 // End submenu setting
 
-/**
- * Public action.
- */
-require_once __DIR__ . '/includes/public.php';
+// Add WA Button after add to cart button start
+function wooWhatsAppButtonAfterAddToCart()
+{
+	require_once __DIR__ . '/includes/public.php';
+}
+if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+   add_action('woocommerce_after_add_to_cart_button', 'wooWhatsAppButtonAfterAddToCart');
+}
+// Add WA Button after add to cart button end
