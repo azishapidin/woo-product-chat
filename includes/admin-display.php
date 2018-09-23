@@ -38,6 +38,22 @@ if (count($_POST) > 0) {
         $wooWhatsAppObject->setOption('woo_wa_button', sanitize_text_field($_POST['woo_wa_button']));
         $success = true;
     }
+    if (isset($_POST['woo_wa_button_class']) && is_null($errorMessage)) {
+        $wooWhatsAppObject->setOption('woo_wa_button_class', sanitize_text_field($_POST['woo_wa_button_class']));
+        $success = true;
+    }
+    if (isset($_POST['woo_wa_button_id']) && is_null($errorMessage)) {
+        $wooWhatsAppObject->setOption('woo_wa_button_id', sanitize_text_field($_POST['woo_wa_button_id']));
+        $success = true;
+    }
+    if (isset($_POST['woo_wa_button_css']) && is_null($errorMessage)) {
+        $wooWhatsAppObject->setOption('woo_wa_button_css', stripslashes($_POST['woo_wa_button_css']));
+        $success = true;
+    }
+    if (isset($_POST['woo_wa_button_show_desktop']) && is_null($errorMessage)) {
+        $wooWhatsAppObject->setOption('woo_wa_button_show_desktop', sanitize_text_field($_POST['woo_wa_button_show_desktop']));
+        $success = true;
+    }
 }
 ?>
 
@@ -125,15 +141,15 @@ if (count($_POST) > 0) {
             <tr valign="top">
             <th scope="row">Custom Button Style CSS</th>
             <td>
-                <textarea  style="width: 500px;" rows="8" name="woo_wa_button_css" placeholder="Example: margin: 0px 2px; border-radius: 5px;"><?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button_css')); ?></textarea><br>
+                <textarea  style="width: 500px;" rows="8" name="woo_wa_button_css" placeholder="Example: margin: 0px 2px; border-radius: 5px;"><?php echo $wooWhatsAppObject->getOption('woo_wa_button_css'); ?></textarea><br>
             </td>
             </tr>
 
             <tr valign="top">
             <th scope="row">Show on Desktop</th>
             <td>
-                <input type="radio" name="woo_wa_button_show_desktop" value="yes"> Yes
-                <input type="radio" name="woo_wa_button_show_desktop" value="no"> No
+                <input type="radio" name="woo_wa_button_show_desktop" value="yes" <?php echo $wooWhatsAppObject->getOption('woo_wa_button_show_desktop') == 'yes' ? 'checked' : '' ?>> Yes
+                <input type="radio" name="woo_wa_button_show_desktop" value="no" <?php echo $wooWhatsAppObject->getOption('woo_wa_button_show_desktop') == 'no' ? 'checked' : '' ?>> No
             </td>
             </tr>
             
