@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/azishapidin
 Requires at least: 3.0.1
 Tested up to: 4.9.8
 Requires PHP: 5.0.0
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,9 @@ WooWhatsApp is the WordPress plugin for add WhatsApp Button in every Single Prod
 4. Your button is ready.
 
 == Changelog ==
+
+= 1.3.2 =
+* Fix default value.
  
 = 1.3.0 =
 * Update default button text to 'Chat to WhatsApp'.
