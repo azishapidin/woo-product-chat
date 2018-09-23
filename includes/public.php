@@ -7,9 +7,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-$phoneNumber = esc_attr( get_option('woo_wa_phone_number') );
-$content = esc_attr( get_option('woo_wa_content') );
-$button = esc_attr( get_option('woo_wa_button') );
+$phoneNumber = esc_attr($wooWhatsAppObject->getOption('woo_wa_phone_number'));
+$content = esc_attr($wooWhatsAppObject->getOption('woo_wa_content'));
+$button = esc_attr($wooWhatsAppObject->getOption('woo_wa_button'));
 ?>
 
 <button class="single_add_to_cart_button button" id="chat-wa" type="button" onclick="openWA()"><?php echo $button ?></button>
