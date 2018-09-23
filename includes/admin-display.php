@@ -41,27 +41,39 @@ if (count($_POST) > 0) {
 }
 ?>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="wrap">
     <h1>WooCommerce Chat to WhatsApp Setting</h1>
+
+    <!-- Tab navigation start -->
     <h2 class="nav-tab-wrapper">
         <a href="?page=woo_whatsapp_admin&tab=general" class="nav-tab <?php echo $active_tab == 'general' ? 'nav-tab-active' : ''; ?>">General</a>
         <a href="?page=woo_whatsapp_admin&tab=advance" class="nav-tab <?php echo $active_tab == 'advance' ? 'nav-tab-active' : ''; ?>">Advance Settings</a>
     </h2>
+    <!-- Tab navigation end -->
+
     <?php if(isset($success) && $success){ ?>
+    <!-- Success message start -->
     <div class="notice notice-success is-dismissible">
         <p>Changes Saved :)</p>
     </div>
+    <!-- Success message end -->
     <?php } ?>
+
     <?php if(!is_null($errorMessage)){ ?>
+    <!-- Error message start -->
     <div class="notice notice-error is-dismissible">
         <p><?php echo $errorMessage; ?></p>
     </div>
+    <!-- Error message end -->
     <?php } ?>
+
+    
     <form action="" method="post">
-        <?php if ($active_tab == 'general') { ?>
         <?php settings_fields( 'woocommerce-order-whatsapp' ); do_settings_sections( 'woocommerce-order-whatsapp' ); ?>
         <?php wp_nonce_field( 'woo_wa_admin_update', '_token' ); ?>
+
+        <?php if ($active_tab == 'general') { ?>
+        <!-- General form menu -->
         <table class="form-table">
             <tr valign="top">
             <th scope="row">WhatsApp Phone Number</th>
@@ -91,8 +103,11 @@ if (count($_POST) > 0) {
             
             </tr>
         </table>
+        <!-- General form menu -->
         <?php } elseif ($active_tab == 'advance') { ?>
+        <!-- Advance form menu -->
         <p>This tab for advance settings like CSS Style, button class, etc.</p>
+        <!-- Advance form menu -->
         <?php } ?>
         <?php submit_button(); ?>
     </form>
