@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Plugin Name: WooWhatsApp
  * Plugin URI: https://github.com/azishapidin/woo-whatsapp
  * Description: WordPress Plugin for Add WhatsApp button in every Single Product Page.
- * Version: 1.3.0
+ * Version: 1.3.1
  * Author: Azis Hapidin
  * Author URI: https://azishapidin.com/
  * License: GPLv2
