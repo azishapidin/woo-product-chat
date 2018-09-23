@@ -1,7 +1,12 @@
 <?php
 
 /**
- * WooWhatsApp Class
+ * WooWhatsApp main class.
+ *
+ * @package    WooWhatsApp
+ * @author     Azis Hapidin <azishapidin@gmail.com>
+ * @link       https://wordpress.org/plugins/woowhatsapp/
+ * @link       https://azishapidin.com/
  */
 class WooWhatsApp
 {
