@@ -11,18 +11,14 @@
 class WooWhatsApp
 {
     /**
-     * Default content.
+     * Default option.
      * 
      * @var string
      */
-    public $defaultContent = 'Hello, I want to buy this product {{link}}';
-
-    /**
-     * Default button text.
-     * 
-     * @var string
-     */
-    public $defaultButton = 'Chat via WhatsApp';
+    public $default = [
+        'content' => 'Hello, I want to buy this product {{link}}',
+        'button' => 'Chat via WhatsApp',
+    ];
 
     /**
      * Content getter function.

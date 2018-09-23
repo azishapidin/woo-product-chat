@@ -97,7 +97,7 @@ if (count($_POST) > 0) {
                     <li>You can use <strong>{{title}}</strong> to insert Product Name.</li>
                     <li>You can use <strong>{{link}}</strong> to insert Product URL.</li>
                 </ul>
-                Example: <em><?php echo esc_attr($wooWhatsAppObject->defaultContent); ?></em> will be parsed to <strong>Hello, I want to buy this product https://example.com/store/product/cool-thsirt</strong>
+                Example: <em><?php echo esc_attr($wooWhatsAppObject->default['content']); ?></em> will be parsed to <strong>Hello, I want to buy this product https://example.com/store/product/cool-thsirt</strong>
             </td>
             </tr>
             

@@ -10,10 +10,13 @@ if (!class_exists('WooCommerce')) {
 }
 
 // Set default value
-if (!get_option('woo_wa_content')) {
-	add_option( 'woo_wa_content', $wooWhatsAppDefault['content'] );
-}
+$defaults = [
+	'woo_wa_content' => $wooWhatsAppObject->default['content'],
+	'woo_wa_button' => $wooWhatsAppObject->default['button'],
+];
 
-if (!get_option('woo_wa_button')) {
-	add_option( 'woo_wa_button', $wooWhatsAppDefault['button'] );
+foreach ($defaults as $key => $value) {
+	if (!get_option($key)) {
+		add_option($key, $value);
+	}
 }
