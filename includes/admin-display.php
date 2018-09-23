@@ -51,8 +51,12 @@ if (count($_POST) > 0) {
         $success = true;
     }
     if (isset($_POST['woo_wa_button_show_desktop']) && is_null($errorMessage)) {
-        $wooWhatsAppObject->setOption('woo_wa_button_show_desktop', sanitize_text_field($_POST['woo_wa_button_show_desktop']));
-        $success = true;
+        if (in_array($_POST['woo_wa_button_show_desktop'], ['yes', 'no'])) {
+            $wooWhatsAppObject->setOption('woo_wa_button_show_desktop', sanitize_text_field($_POST['woo_wa_button_show_desktop']));
+            $success = true;
+        } else {
+            $errorMessage = $_POST['woo_wa_button_show_desktop'] . ' value not valid.';
+        }
     }
 }
 ?>
