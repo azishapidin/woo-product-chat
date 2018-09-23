@@ -78,20 +78,20 @@ if (count($_POST) > 0) {
             <tr valign="top">
             <th scope="row">WhatsApp Phone Number</th>
             <td>
-                <input style="width: 300px;" type="text" name="woo_wa_phone_number" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_phone_number')); ?>" placeholder="Example: 62888XXXXXXX" />
+                <input style="width: 500px;" type="text" name="woo_wa_phone_number" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_phone_number')); ?>" placeholder="Example: 62888XXXXXXX" />
                 <br><small>Don't forget to add country code prefix, like 62 for Indonesia.</small>
             </td>
             </tr>
 
             <tr valign="top">
             <th scope="row">Button Text</th>
-            <td><input style="width: 300px;" type="text" name="woo_wa_button" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button')); ?>" /></td>
+            <td><input style="width: 500px;" type="text" name="woo_wa_button" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button')); ?>" /></td>
             </tr>
             
             <tr valign="top">
             <th scope="row">Message</th>
             <td>
-                <textarea  style="width: 300px;" rows="8" name="woo_wa_content"><?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_content')); ?></textarea><br>
+                <textarea  style="width: 500px;" rows="8" name="woo_wa_content"><?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_content')); ?></textarea><br>
                 Formatting:
                 <ul>
                     <li>You can use <strong>{{title}}</strong> to insert Product Name.</li>
@@ -106,7 +106,36 @@ if (count($_POST) > 0) {
         <!-- General form menu -->
         <?php } elseif ($active_tab == 'advance') { ?>
         <!-- Advance form menu -->
-        <p>This tab for advance settings like CSS Style, button class, etc.</p>
+        <!-- General form menu -->
+        <h3>WhatsApp Button Setting</h3>
+        <table class="form-table">
+            <tr valign="top">
+            <th scope="row">Button Class
+            <td>
+                <input style="width: 500px;" type="text" name="woo_wa_button_class" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button_class')); ?>" placeholder="<?php echo esc_attr($wooWhatsAppObject->default['button_class']); ?>" />
+                <br><small>Default class: <code>single_add_to_cart_button button</code>, with this class WhatsApp button style will following Add to Cart button style.</small>
+            </td>
+            </tr>
+
+            <tr valign="top">
+            <th scope="row">Button ID</th>
+            <td><input style="width: 500px;" type="text" name="woo_wa_button_id" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button_id')); ?>" placeholder="<?php echo esc_attr($wooWhatsAppObject->default['button_id']); ?>" /></td>
+            </tr>
+            
+            <tr valign="top">
+            <th scope="row">Custom Button Style CSS</th>
+            <td>
+                <textarea  style="width: 500px;" rows="8" name="woo_wa_button_css" placeholder="Example: margin: 0px 2px; border-radius: 5px;"><?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button_css')); ?></textarea><br>
+            </td>
+            </tr>
+
+            <!-- <tr valign="top">
+            <th scope="row">Button ID</th>
+            <td><input style="width: 500px;" type="text" name="woo_wa_button_id" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button_id')); ?>" /></td>
+            </tr> -->
+            
+            </tr>
+        </table>
         <!-- Advance form menu -->
         <?php } ?>
         <?php submit_button(); ?>

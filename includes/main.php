@@ -18,6 +18,8 @@ class WooWhatsApp
     public $default = [
         'content' => 'Hello, I want to buy this product {{link}}',
         'button' => 'Chat via WhatsApp',
+        'button_class' => 'single_add_to_cart_button button',
+        'button_id' => 'whatsapp_button',
     ];
 
     /**
