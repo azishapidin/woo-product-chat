@@ -3,9 +3,9 @@ Contributors: azishapidin
 Tags: woocommerce, whatsapp, order
 Donate link: https://www.paypal.me/azishapidin
 Requires at least: 3.0.1
-Tested up to: 5.0
+Tested up to: 4.9.8
 Requires PHP: 5.0.0
-Stable tag: 1.2.2
+Stable tag: 1.3.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,14 @@ WooWhatsApp is the WordPress plugin for add WhatsApp Button in every Single Prod
 
 == Changelog ==
  
+= 1.3.0 =
+* Update default button text to 'Chat to WhatsApp'.
+* Add 'Advance Settings' tab on WooWhatsApp admin page.
+* Users can change class and id for Chat to WhatsApp Button.
+* Users can add custom CSS (inline CSS) on Chat to WhatsApp Button.
+* Users can choose whether the button is only visible on mobile or on the desktop too.
+
+
 = 1.2.2 =
 * Add 'single_add_to_cart_button button' class to button.
  
