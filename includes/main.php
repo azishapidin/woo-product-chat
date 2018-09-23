@@ -70,10 +70,10 @@ class WooWhatsApp
     {
         $result = get_option($key);
         if (!$result && !is_string($result)) {
-            return $result;
+            return $default;
         }
-
-        return $default;
+        
+        return $result;
     }
 }
 

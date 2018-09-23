@@ -66,20 +66,20 @@ if (count($_POST) > 0) {
             <tr valign="top">
             <th scope="row">WhatsApp Phone Number</th>
             <td>
-                <input style="width: 300px;" type="text" name="woo_wa_phone_number" value="<?php echo esc_attr( get_option('woo_wa_phone_number') ); ?>" placeholder="Example: 62888XXXXXXX" />
+                <input style="width: 300px;" type="text" name="woo_wa_phone_number" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_phone_number')); ?>" placeholder="Example: 62888XXXXXXX" />
                 <br><small>Don't forget to add country code prefix, like 62 for Indonesia.</small>
             </td>
             </tr>
 
             <tr valign="top">
             <th scope="row">Button Text</th>
-            <td><input style="width: 300px;" type="text" name="woo_wa_button" value="<?php echo esc_attr( get_option('woo_wa_button') ); ?>" /></td>
+            <td><input style="width: 300px;" type="text" name="woo_wa_button" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button')); ?>" /></td>
             </tr>
             
             <tr valign="top">
             <th scope="row">Message</th>
             <td>
-                <textarea  style="width: 300px;" rows="8" name="woo_wa_content"><?php echo esc_attr( get_option('woo_wa_content') ); ?></textarea><br>
+                <textarea  style="width: 300px;" rows="8" name="woo_wa_content"><?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_content')); ?></textarea><br>
                 Formatting:
                 <ul>
                     <li>You can use <strong>{{title}}</strong> to insert Product Name.</li>
