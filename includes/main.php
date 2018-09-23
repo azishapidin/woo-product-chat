@@ -28,7 +28,7 @@ class WooWhatsApp
      * 
      * @return string
      */
-    function wooWhatsAppGetContent($format = '', $product)
+    function getContent($format = '', $product)
     {
         if ($format == '') {
             $format = $wooWhatsAppDefault['content'];
