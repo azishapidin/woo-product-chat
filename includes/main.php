@@ -20,6 +20,8 @@ class WooWhatsApp
         'button' => 'Chat via WhatsApp',
         'button_class' => 'single_add_to_cart_button button',
         'button_id' => 'whatsapp_button',
+        'button_css' => '',
+        'button_show_desktop' => 'yes',
     ];
 
     /**
@@ -77,6 +79,21 @@ class WooWhatsApp
         }
         
         return $result;
+    }
+
+    /**
+     * Set default value.
+     *
+     * @return void
+     */
+    public function setDefault()
+    {
+        foreach ($this->default as $key => $value) {
+            $optionKey = 'woo_wa_' . $key;
+            if (!get_option($optionKey)) {
+                add_option($optionKey, $value);
+            }
+        }
     }
 }
 

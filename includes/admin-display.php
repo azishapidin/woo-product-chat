@@ -129,10 +129,13 @@ if (count($_POST) > 0) {
             </td>
             </tr>
 
-            <!-- <tr valign="top">
-            <th scope="row">Button ID</th>
-            <td><input style="width: 500px;" type="text" name="woo_wa_button_id" value="<?php echo esc_attr($wooWhatsAppObject->getOption('woo_wa_button_id')); ?>" /></td>
-            </tr> -->
+            <tr valign="top">
+            <th scope="row">Show on Desktop</th>
+            <td>
+                <input type="radio" name="woo_wa_button_show_desktop" value="yes"> Yes
+                <input type="radio" name="woo_wa_button_show_desktop" value="no"> No
+            </td>
+            </tr>
             
             </tr>
         </table>
