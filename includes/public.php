@@ -20,10 +20,10 @@ $button = esc_attr($wooWhatsAppObject->getOption('woo_wa_button'));
 <script>
 	var isMobile = navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i);
 	if (isMobile) {
-		document.getElementById("<?php echo $wooWhatsAppObject->getOption('woo_wa_button_id', 'woowhatsapp-button') ?>").style.display = 'block';
+		document.getElementById("<?php echo $wooWhatsAppObject->getOption('woo_wa_button_id', 'woowhatsapp-button') ?>").style.display = 'inline';
 	} else {
 		<?php if ($wooWhatsAppObject->getOption('woo_wa_button_show_desktop') == 'yes') { ?>
-		document.getElementById("<?php echo $wooWhatsAppObject->getOption('woo_wa_button_id', 'woowhatsapp-button') ?>").style.display = 'block';
+		document.getElementById("<?php echo $wooWhatsAppObject->getOption('woo_wa_button_id', 'woowhatsapp-button') ?>").style.display = 'inline';
 		<?php } ?>
 	}
 	function openWA(){
