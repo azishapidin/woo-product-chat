@@ -12,7 +12,7 @@ $content = esc_attr($wooWhatsAppObject->getOption('woo_wa_content'));
 $button = esc_attr($wooWhatsAppObject->getOption('woo_wa_button'));
 ?>
 
-<button class="<?php echo $wooWhatsAppObject->getOption('woo_wa_button_class') ?>" id="<?php echo $wooWhatsAppObject->getOption('woo_wa_button_id') ?>" type="button" onclick="openWA()"><?php echo $button ?></button>
+<button class="<?php echo $wooWhatsAppObject->getOption('woo_wa_button_class') ?>" id="<?php echo $wooWhatsAppObject->getOption('woo_wa_button_id') ?>" style="<?php echo $wooWhatsAppObject->getOption('woo_wa_button_css') ?>" type="button" onclick="openWA()"><?php echo $button ?></button>
 <script>
 function openWA(){
 	var phoneNumber = "<?php echo esc_attr($phoneNumber); ?>",
